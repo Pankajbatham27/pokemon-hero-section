@@ -1,0 +1,140 @@
+.coverColor {
+    overflow: hidden;
+}
+.imageCover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageCover .absolute {
+    filter: blur(15px);
+}
+
+.imageCover .absolute img {
+    max-width: 200px;
+    height: auto;
+}
+
+.focusImage img {
+    filter: blur(0px);
+}
+
+.imageCover {
+    position: relative;
+    width: 490px;
+    margin: auto;
+}
+@keyframes effect {
+
+    0% {
+        transform: translate(0%, -50%) scale(0.22)
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1)
+    }
+}
+
+.focusImageRight {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* transform: translate(0%, -50%) scale(0.22); */
+    animation: effect 0.3s ease-in-out forwards;
+}
+
+@keyframes effectLeft {
+
+    0% {
+        transform: translate(-100%, -50%) scale(0.22)
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1)
+    }
+}
+
+.focusImageLeft {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* transform: translate(0%, -50%) scale(0.22); */
+    animation: effectLeft 0.3s ease-in-out forwards;
+}
+
+.imageCover .absolute:last-child {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+}
+
+.absolute:nth-child(2),
+.absolute:nth-child(1) {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    /* display: none; */
+}
+
+.heading {
+    font-family: 'Changa', sans-serif;
+    font-size: 105px;
+}
+
+.rightText {
+    color: whitesmoke;
+}
+
+.pagination {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.pagination ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    font-size: 27px;
+    transform: scaleX(1.2);
+    color: #fff;
+
+}
+
+.pagination ul li {
+    cursor: pointer;
+}
+
+.bottomToUp {
+    animation: bottomToUp 0.5s ease-in-out forwards;
+}
+
+@keyframes bottomToUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes upToBottom {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+
+        transform: translateY(0);
+    }
+}
+
+.upToBottom{
+    animation: upToBottom 0.5s ease-in-out forwards;
+}
